@@ -1,14 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import TaskListComponent from './componentes/container/task_list';
+import ComponenteListaLibreta from './componentes/container/lista_libreta';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <TaskListComponent></TaskListComponent>
-      </header>
+      <ComponenteListaLibreta></ComponenteListaLibreta>
     </div>
   );
 }
