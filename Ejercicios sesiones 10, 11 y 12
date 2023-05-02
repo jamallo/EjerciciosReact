@@ -1,1 +1,83 @@
+import React, { useState } from 'react';
+import '../App.css';
+// let rojo = Math.floor(Math.random() * 256);
+// let verde = Math.floor(Math.random() * 256);
+// let azul = Math.floor(Math.random() * 256);
 
+
+    //     let rojo = Math.floor(Math.random() * 256);
+    //     let verde = Math.floor(Math.random() * 256);
+    //     let azul = Math.floor(Math.random() * 256);
+   
+
+    // const estiloentrando = {
+    //     backgroundColor : `rgb(${rojo}, ${verde}, ${azul})`,
+    //     width: '255px',
+    //     height: '255px'
+    // };
+
+    const cogerColorAleatorio = () => {
+        const rojo = Math.floor(Math.random() * 256);
+        const verde = Math.floor(Math.random() * 256);
+        const azul = Math.floor(Math.random() * 256);
+
+        return `rgb(${rojo}, ${verde}, ${azul})`;
+    };
+
+
+//     const estiloInicial = {
+//         backgroundColor : "black",
+//         width: '255px',
+//         height: '255px'
+//    };
+
+//     const estiloentrando = {
+//              backgroundColor : `${cogerColorAleatorio()}`,
+//              width: '255px',
+//              height: '255px'
+//         };
+
+
+
+
+
+
+
+// const ReptanguloEntrando1 = ({generarEntrando, propStyle}) => {
+//     return (
+//         <div style={propStyle} onMouseOver={generarEntrando}>Entrando</div>
+//     )
+// }
+
+
+
+// cogerColorAleatorio();
+
+// setInterval = (() => {
+//     cogerColorAleatorio();
+// }, 1000);
+var intervalo;
+
+const ReptanguloEntrando = () => {
+    const [color, setColor] = useState('black');
+
+    const alternar = () => intervalo = setInterval(() => {    
+            setColor(cogerColorAleatorio());
+        }, 1000);
+    
+
+    const detener = () => clearInterval(intervalo);
+
+
+    
+    return(
+        <div>
+        
+             <div className='contenedor' style={{backgroundColor : color, width: '255px', height: '255px'}} onMouseOver={alternar} onMouseOut={detener} onDoubleClick={detener}></div> 
+          
+        </div>
+    );
+}
+
+
+export default ReptanguloEntrando;
