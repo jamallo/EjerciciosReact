@@ -1,10 +1,12 @@
 import './App.css';
-import ComponenteListaLibreta from './componentes/container/lista_libreta';
+import ListaComponentesTarea from './componentes/container/listaTareas';
 
 function App() {
   return (
     <div className="App">
-      <ComponenteListaLibreta></ComponenteListaLibreta>
+    <ListaComponentesTarea>
+    </ListaComponentesTarea>
+      
     </div>
   );
 }
