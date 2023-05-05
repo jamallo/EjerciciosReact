@@ -52,14 +52,15 @@ const RegistrarFormulario = ({add, length}) => {
     }
 
     return (
-        <div>
+        <div className="card card-header p3" style={{display: 'block'}}>
             <h4>Registro de tareas</h4>
             <Formik
                 initialValues={valoresIniciales}
                 validationSchema={registro}
                 onSubmit={async (values) => {
                     await new Promise((r) => setTimeout(r, 1000));
-                    anadirTarea();
+                    anadirTarea(values, null, 2);
+                    
                 }}>
                     {({values,
                         touched,
@@ -68,7 +69,7 @@ const RegistrarFormulario = ({add, length}) => {
                         handleChange,
                         handleBlur}) => (
                             <Form onSubmit={anadirTarea}>
-                                <div>
+                                <div style={{display: 'block'}}>
                                 <label ref={nombreRef} htmlFor="nombre"> Nombre de la tarea </label>
                                 <Field id="nombre" type="text" name="nombre" placeholder="Nombre de la tarea"/>
 

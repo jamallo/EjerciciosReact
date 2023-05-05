@@ -96,22 +96,26 @@ const ListaComponentesTarea = () => {
     }
 
     const divExterior = {
-        display: 'flex'
+        display: 'flex',
+        height: '50%'
     }
 
     return (
         <div style={divExterior}>
-            <div className="col-12">
+            <div>
                 <div className="card">
                     <div className="card-header p3">
                         <h5> Tus tareas: </h5>
                     </div>
-                    <div className="card-body" data-mdb-perfect-scrollbar="true" style={{position: 'relative', height: '200px'}}>
+                    <div className="card-body" data-mdb-perfect-scrollbar="true" style={{height: '50%'}}>
                         {cargando ? (<p style={loadingStyle}>loading...</p>) : tablaTareas}
                     </div>
+                    
                 </div>
             </div>
-                <RegistrarFormulario add={anadirTarea} length={tareas.length}></RegistrarFormulario> 
+            <div style={{height: '50%'}}>
+                        <RegistrarFormulario add={anadirTarea} length={tareas.length}></RegistrarFormulario> 
+            </div>
         </div>
     );
 };
