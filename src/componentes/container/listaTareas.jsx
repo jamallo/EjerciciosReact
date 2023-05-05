@@ -3,6 +3,7 @@ import ComponentesTarea from "../pure/tarea";
 import { Tarea } from "../../models/tarea.class";
 import { NIVELES } from "../../models/niveles.enum";
 import RegistrarFormulario from "../pure/forms/formularioTareas";
+import * as Yup from 'yup';
 
 
 const ListaComponentesTarea = () => {

@@ -43,7 +43,7 @@ const RegistrarFormulario = ({add, length}) => {
             completado: Yup.boolean(),
             nivel: Yup.string()
             .oneOf([NIVELES.NORMAL, NIVELES.URGENTE, NIVELES.IMPORTANTE, NIVELES.PASABLE], 'Debes seleccionar un nivel de tarea')
-            .required('Nivel es requerido')
+            .required('Nivel es requerido'),
         }
     )
 

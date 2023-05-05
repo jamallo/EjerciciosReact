@@ -4,7 +4,7 @@ import { Tarea } from "../../models/tarea.class";
 import { NIVELES } from "../../models/niveles.enum";
 
 
-const ComponentesTarea = ({ tarea, completado, eliminar}) => {
+const ComponentesTarea = ({ tarea, completado, eliminada}) => {
 
     useEffect(() => {
         console.log('Tarea creada')
@@ -84,7 +84,7 @@ const ComponentesTarea = ({ tarea, completado, eliminar}) => {
             </td>
             <td className="align-middle">
                 {tareaCompletadaIcono()}
-                <i className="bi-trash task-action" style={{color: 'tomato', fontSize: '20px'}} onClick={() => eliminar(tarea)}></i>
+                <i className="bi-trash task-action" style={{color: 'tomato', fontSize: '20px'}} onClick={() => eliminada(tarea)}></i>
             </td>
         </tr>
     );
@@ -93,7 +93,7 @@ const ComponentesTarea = ({ tarea, completado, eliminar}) => {
 ComponentesTarea.protoType = {
     tarea: PropTypes.instanceOf(Tarea).isRequired,
     completado: PropTypes.func.isRequired,
-    eliminar: PropTypes.func.isRequired
+    eliminada: PropTypes.func.isRequired
 };
 
 export default ComponentesTarea;
