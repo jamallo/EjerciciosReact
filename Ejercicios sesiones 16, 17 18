@@ -1,0 +1,42 @@
+import { BrowserRouter, Link, Routes, Route, Navigate } from 'react-router-dom';
+import './App.css';
+import PaginaInicio from './home/paginaInicio';
+import InicioSesion from './componentes/pure/forms/inicioSesion';
+import NotFoundPage from './home/NotFoundPage';
+import RegisterFormik from './componentes/pure/forms/registerFormik';
+import ListaComponentesTarea from './componentes/container/listaTareas';
+
+function App() {
+
+  let logged = false;
+  return (
+    <BrowserRouter>
+      <div>
+        <aside>
+          <Link to='/'>|| Inicio |</Link>
+          <Link to='/registro'>| Registrarse |</Link>
+          <Link to='/logarse'>| Iniciar sesión |</Link>
+          <Link to='tareas'>| Tareas |</Link>
+        </aside>
+        <main>
+          <Routes>
+            <Route exact path='/' element = { <PaginaInicio/> } />
+            <Route exact path='/logarse' element = { <InicioSesion/> } />
+            <Route exact path='*' element={ <NotFoundPage/>}/>
+            <Route exact path='/registro' element={ <RegisterFormik/> } />
+            <Route path='tareas' element={
+              logged ?
+              <ListaComponentesTarea/>
+              :
+              <Navigate to='/logarse'/>
+            }/>
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
+      
+    
+  );
+}
+
+export default App;
